@@ -8,7 +8,8 @@ class Main : JavaPlugin() {
     override fun onEnable() {
         super.onEnable()
         val plugin = this
-        server.pluginManager.registerEvents(BackStep(plugin), plugin)
+        server.pluginManager.registerEvents(BackStep(), plugin)
         server.pluginManager.registerEvents(EntityDamageEvent(), plugin)
+        CoolTimeTask.runTaskTimer(plugin, 0L, 20L)
     }
 }
